@@ -63,7 +63,7 @@ class XD_HomeSalon extends StatelessWidget {
               Transform.translate(
                 offset: Offset(80.0, 311.0),
                 child: Text(
-                  'Température\nSalon',
+                  ' Température\nSalon',
                   style: TextStyle(
                     fontFamily: 'IBM Plex Sans',
                     fontSize: 15,

@@ -15,6 +15,7 @@ class _GeneralState extends State<General> {
   Widget build(BuildContext context) {
     var _divwidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: const Color(0xfff5f5f5),
       body: Column(
         children: <Widget>[
           Topbar(),

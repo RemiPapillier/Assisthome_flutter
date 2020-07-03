@@ -1,4 +1,9 @@
+import 'package:Assisthome_flutter/AjoutWidget.dart';
+import 'package:Assisthome_flutter/LampeWidget.dart';
 import 'package:Assisthome_flutter/Pieces.dart';
+import 'package:Assisthome_flutter/TelevisionWidget.dart';
+import 'package:Assisthome_flutter/TemperatureWidget.dart';
+import 'package:Assisthome_flutter/VoletWidget.dart';
 import 'package:flutter/material.dart';
 import './Topbar.dart';
 
@@ -11,10 +16,14 @@ class Cuisine extends StatefulWidget {
 }
 
 class _CuisineState extends State<Cuisine> {
+  Color _dark = const Color(0xfffe4c00);
+  Color _light = const Color(0xfffe8700);
+  var aPiece = "Cuisine";
   @override
   Widget build(BuildContext context) {
     var _divwidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: const Color(0xfff5f5f5),
       body: Column(
         children: <Widget>[
           Topbar(),
@@ -57,6 +66,42 @@ class _CuisineState extends State<Cuisine> {
               ),
             ),
           ),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: TelevisionWidget(color1: _dark, color2: _light, actualPiece: aPiece,),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: TemperatureWidget(color1: _dark, color2: _light, actualPiece: aPiece,),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: LampeWidget(color1: _dark, color2: _light, actualPiece: aPiece,),
+                    ),
+            
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: VoletWidget(color1: _dark, color2: _light, actualPiece: aPiece,),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: AjoutWidget(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
         ],
       ),
     );
