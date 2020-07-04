@@ -1,9 +1,11 @@
+import 'package:Assisthome_flutter/Appareils.dart';
 import 'package:flutter/material.dart';
 
 class AjoutWidget extends StatefulWidget {
-  AjoutWidget({
-    Key key,
-  }) : super(key: key);
+  AjoutWidget({this.color1, this.color2, this.actualPiece});
+  final Color color1;
+  final Color color2;
+  final actualPiece;
   @override
   _AjoutWidgetState createState() => _AjoutWidgetState();
 }
@@ -41,7 +43,17 @@ class _AjoutWidgetState extends State<AjoutWidget> {
                     ),
                     child: Icon(Icons.add),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                                transitionDuration: Duration(seconds: 0),
+                                pageBuilder: (BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secAnimation) {
+                                  return Appareils(color1: widget.color1, color2: widget.color2, actualPiece: widget.actualPiece,);
+                                }));
+                  },
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -66,9 +78,6 @@ class _AjoutWidgetState extends State<AjoutWidget> {
                   ],
                 )
               ],
-            ),
-            Row(
-              children: <Widget>[],
             ),
           ],
         ),

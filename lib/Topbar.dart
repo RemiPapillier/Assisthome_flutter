@@ -1,4 +1,5 @@
 import 'package:Assisthome_flutter/Favoris.dart';
+import 'package:Assisthome_flutter/Appareils.dart';
 import 'package:flutter/material.dart';
 
 class Topbar extends StatefulWidget {
@@ -55,7 +56,7 @@ class _TopbarState extends State<Topbar> {
                   child: IconButton(
                     icon: Icon(Icons.menu),
                     iconSize: 40,
-                    color: Colors.blueGrey[900],
+                    color: Colors.white,
                     onPressed: showMenu,
                   ),
                 ),
@@ -75,7 +76,7 @@ class _TopbarState extends State<Topbar> {
                       child:Text(
                         "HOME", 
                         style: TextStyle(
-                          fontFamily: 'IBM Plex Sans', color: Colors.blueGrey[900], fontSize: 26, fontWeight: FontWeight.w600
+                          fontFamily: 'IBM Plex Sans', color: Colors.white, fontSize: 26, fontWeight: FontWeight.w600
                         ),
                       ),
                       onTap: () {
@@ -95,17 +96,27 @@ class _TopbarState extends State<Topbar> {
                       child:Text(
                         "APPAREILS", 
                         style: TextStyle(
-                          fontFamily: 'IBM Plex Sans', color: Colors.blueGrey[900], fontSize: 26, fontWeight: FontWeight.w600
+                          fontFamily: 'IBM Plex Sans', color: Colors.white, fontSize: 26, fontWeight: FontWeight.w600
                         ),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                                transitionDuration: Duration(seconds: 0),
+                                pageBuilder: (BuildContext context,
+                                    Animation<double> animation,
+                                    Animation<double> secAnimation) {
+                                  return Appareils(color1: const Color(0xff62b2f4), color2: const Color(0xff7f8efe), actualPiece: "Favoris");
+                                }));
+                      },
                     ),
                     SizedBox(height: 10),
                     InkWell(
                       child:Text(
                         "A PROPOS", 
                         style: TextStyle(
-                          fontFamily: 'IBM Plex Sans', color: Colors.blueGrey[900], fontSize: 26, fontWeight: FontWeight.w600
+                          fontFamily: 'IBM Plex Sans', color: Colors.white, fontSize: 26, fontWeight: FontWeight.w600
                         ),
                       ),
                       onTap: () {},

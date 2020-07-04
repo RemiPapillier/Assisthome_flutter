@@ -55,7 +55,7 @@ class _PorteWidgetState extends State<PorteWidget> {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                             image:
-                                const AssetImage('assets/images/ampoule.png'),
+                                const AssetImage('assets/images/lock.png'),
                             fit: BoxFit.scaleDown,
                           ),
                           borderRadius:
@@ -70,7 +70,7 @@ class _PorteWidgetState extends State<PorteWidget> {
                       height: _divwidth / 7,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: const AssetImage('assets/images/ampoule.png'),
+                          image: const AssetImage('assets/images/lock.png'),
                           fit: BoxFit.scaleDown,
                         ),
                         borderRadius:
@@ -85,7 +85,7 @@ class _PorteWidgetState extends State<PorteWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      " Lampe " + widget.actualPiece,
+                      " Porte "+ widget.actualPiece,
                       style: TextStyle(
                           fontFamily: 'IBM Plex Sans',
                           color: Colors.black,
@@ -96,7 +96,7 @@ class _PorteWidgetState extends State<PorteWidget> {
                       Visibility(
                         visible: _click,
                         child: Text(
-                          " On",
+                          " Ouverte",
                           style: TextStyle(
                               fontFamily: 'IBM Plex Sans',
                               color: Colors.black,
@@ -104,7 +104,7 @@ class _PorteWidgetState extends State<PorteWidget> {
                               fontWeight: FontWeight.w400),
                         ),
                         replacement: Text(
-                          " Off",
+                          " Fermée",
                           style: TextStyle(
                               fontFamily: 'IBM Plex Sans',
                               color: Colors.black,
